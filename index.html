@@ -2,349 +2,505 @@
 <html lang="fr-FR">
 
 <head>
-
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="description" content="Alain Badia, Psychanalyste à Saint-André (66690). Thérapies pour adultes, adolescents, enfants et couples.">
+  <title>Alain Badia | Psychanalyste</title>
 
-  <title>Alain Badia</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Bootstrap Core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts optimisées -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather&display=swap" rel="stylesheet">
 
-  <!-- Custom CSS -->
-  <link href="css/main.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-  <!-- Custom Fonts -->
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-  <link href='https://fonts.googleapis.com/css?family=Merriweather|Lato:400,700' rel='stylesheet' type='text/css'>
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+  
+  <style>
+    :root {
+      --zen-bronze-light: #c5a059;
+      --zen-bronze-antique: #b8977e;
+      --zen-lin: #fcfbfa;
+      --zen-gold-bronze: #d4af37; /* Teinte Or/Bronze pour le bouton */
+    }
+    
+    /* Structure globale pour le footer en bas */
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      font-family: 'Lato', sans-serif;
+    }
+    main {
+      flex: 1 0 auto;
+    }
+    footer {
+      flex-shrink: 0;
+    }
 
- <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+    /* --- AMBIANCE ET ACCENTS --- */
+    .bg-zen-lin { background-color: var(--zen-lin) !important; }
+    .text-zen { color: var(--zen-bronze-light) !important; }
+    
+    /* Bouton Doré-Bronze spécifique */
+    .btn-gold-bronze {
+      background-color: var(--zen-gold-bronze);
+      color: #ffffff;
+      border: none;
+      transition: background-color 0.3s ease;
+    }
+    .btn-gold-bronze:hover {
+      background-color: #b8962f;
+      color: #ffffff;
+    }
 
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-  <![endif]-->
+    /* Séparateur Galet & Sérénité (Fixé en Bronze Antique) */
+    .zen-separator { display: flex; justify-content: center; align-items: center; gap: 12px; margin: 1.5rem auto 3rem auto; }
+    .zen-separator span { display: block; width: 8px; height: 8px; background-color: var(--zen-bronze-antique); border-radius: 50%; }
+    .zen-separator span:nth-child(2) { width: 11px; height: 11px; }
 
+    /* Ajustements typographiques et espaces */
+    .fst-italic, em { font-style: italic; }
+    .bg-primary .fst-italic { font-size: 1rem !important; line-height: 1.5; }
+    #contact font, .text-muted em { font-size: 0.95rem !important; }
+
+    /* Stabilisation de la section Cadre Thérapeutique */
+    #cadre .card { width: 100% !important; }
+    #cadre p.small { font-size: 0.95rem !important; line-height: 1.6 !important; color: #555555 !important; }
+    #cadre h4 { font-size: 1.1rem !important; font-weight: 700; color: var(--zen-bronze-light); }
+
+    /* --- EFFETS DE LA LIGHTBOX BOOTSTRAP NATIF --- */
+    .img-hover { transition: transform 0.25s ease-in-out; cursor: pointer; }
+    .img-hover:hover { transform: scale(1.03); }
+    .modal-backdrop.show { backdrop-filter: blur(6px); background-color: rgba(15, 23, 42, 0.7); }
+    .lightbox-content { background: transparent !important; border: none !important; }
+
+    /* --- HARMONISATION DU WIDGET PSYCHOLOGUE.NET --- */
+    #js_widget .widget-wrapper { display: flex !important; flex-direction: column !important; gap: 15px !important; padding: 10px 0 !important; }
+    #js_widget .widget-wrapper hr { display: none !important; }
+    #js_widget .widget-wrapper > a, #js_widget .rev-explain { background: #ffffff !important; padding: 15px !important; border-radius: 8px !important; border: 1px solid #e9ecef !important; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02) !important; margin: 0 !important; text-align: left !important; }
+    #js_widget .widget-wrapper > a { text-align: center !important; color: var(--zen-bronze-light) !important; }
+	
+	/* ===================================================
+   ANIMATION DES LIENS DE NAVIGATION (SOULIGNEMENT)
+   =================================================== */
+
+    /* Style de base et transition de couleur */
+    #mainNav .navbar-nav .nav-link {
+        position: relative;
+        transition: color 0.3s ease;
+    }
+
+    /* Couleur dorée au survol et pour l'onglet actif */
+    #mainNav .navbar-nav .nav-link:hover,
+    #mainNav .navbar-nav .nav-link.active {
+        color: var(--zen-bronze-light) !important;
+    }
+
+    /* Création de la ligne invisible, centrée sous le texte */
+    #mainNav .navbar-nav .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -2px; /* Ajustement de la hauteur sous le texte */
+        left: 50%;
+        background-color: var(--zen-gold-bronze);
+        transition: all 0.3s ease-in-out;
+        transform: translateX(-50%);
+    }
+
+    /* Déploiement fluide à 80% de la largeur au survol et sur l'actif */
+    #mainNav .navbar-nav .nav-link:hover::after,
+    #mainNav .navbar-nav .nav-link.active::after {
+        width: 80%;
+    }
+	
+  </style>
 </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-  <!-- Intro Header -->
-  <header class="intro">
-    <div class="intro-body">
-      <div class="container">
-        <div class="row">
-          <div class="">
-            <!-- Navigation -->
-            <nav class="navbar navbar-custom" role="navigation">
-              <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                  <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">
-                  <h1>Alain Badia</h1>
-                  <hr>
-                  <h3>Psychanalyste</h3>
-                </a>
-              </div>
+<body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="70">
 
-              <!-- .navbar-collapse -->
-              <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                <ul class="nav navbar-nav">
-                  <li class="hidden">
-                    <a href="#page-top"></a>
-                  </li>
-                  <li>
-                    <a class="page-scroll" href="#welcome">Psychanalyse</a>
-                  </li>
-                  <li>
-                    <a class="page-scroll" href="#books">Livres</a>
-                  </li>
-                  <li>
-                    <a class="page-scroll" href="#cabinet">Le cabinet</a>
-                  </li>
-                  <li>
-                    <a class="page-scroll" href="#therapies">Les thérapies</a>
-                  </li>
-                  <li>
-                    <a class="page-scroll" href="#contact">Contact</a>
-                  </li>
-                </ul>
-              </div>
-              <!-- /.navbar-collapse -->
-
-            </div>
-          </div>
-        </div>
+  <!-- Navigation -->
+  <nav id="mainNav" class="navbar navbar-expand-lg navbar-light fixed-top bg-light shadow-sm">
+    <div class="container">
+      <a class="navbar-brand text-uppercase fw-bold text-zen" href="#page-top">
+        Alain Badia <span class="fs-6 d-block fw-normal text-muted" style="color: #6c757d;">Psychanalyste</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Basculer la navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto my-2 my-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#welcome">Psychanalyse</a></li>
+          <li class="nav-item"><a class="nav-link" href="#cabinet">Le cabinet</a></li>
+          <li class="nav-item"><a class="nav-link" href="#therapies">Les thérapies</a></li>
+          <li class="nav-item"><a class="nav-link" href="formations.html">Mes formations</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog/index.php">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
       </div>
-    </header>
-    <!-- Intro Header -->
-
-    <!-- /.container -->
+    </div>
   </nav>
-
-  <!-- Welcome Section -->
-  <section id="welcome" class="container content-section">
-    <div class="row">
-      <div class="col-md-5 text-center" style="padding:2%;">
-        <h1>Bienvenue</h1>
-        <hr>
-        <img src="img/portrait.jpg" class="img-responsive" alt="portrait alain badia" />
-      </div>
-      <div class="col-md-7 infos">
-        <h3>Qu’est-ce que la psychanalyse ?</h3>
-
-        <p>
-          La psychanalyse est une voie d’exploration de l’inconscient et  une méthode thérapeutique qui a plus d’un siècle, un siècle qui a vu se confirmer les intuitions géniales de son concepteur, Freud.
-          Cette méthode est fondée sur la parole, la parole de celui qui consulte et peut parler librement comme jamais peut-être il n’a pu le faire avec quiconque, ni sa famille, ni son (sa) conjoint (e), ni ses amis.
-        </p>
-        <p>
-          Parce que le psychanalyste, dans sa neutralité bienveillante, son attitude empathique, écoute votre parole sans porter de jugement. Il vous accompagne, en interprétant cette parole afin que vous puissiez faire émerger un sens nouveau.
-        </p>
-        <p>
-          Je vous accueille dans un cadre et un temps qui vous est spécialement dédiés.
-          Il s’agit de reconnaître votre souffrance, de lui donner un lieu, un temps, un cadre, afin qu’elle puisse se dire et être entendue. Sans jugement. En toute confidentialité.
-        </p>
-        <p>
-          <strong>
-            Il n’y a pas de honte à prendre soin de soi, mais il faut du courage pour franchir le pas, lorsque notre éducation ne nous y a pas habitués, lorsque nos proches n’en ressentent pas la nécessité, lorsque nous-mêmes ne nous autorisons pas une vie meilleure.
-            Je vous souhaite ce courage.
-          </strong>
-        </p>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- Books Section -->
-  <section id="books" class="container content-section">
-    <div class="container">
-        <h2>Livres</h2>
-        <div style="width:40px;">
-          <hr>
-        </div>
-        <p style="margin-top:20px;">
-          Et parce qu’il y a toujours une première fois… Je vous propose en guise d’apéritif quelques  lectures sérieuses ou amusantes, sans à priori :
-        </p>
-        <div class="owl-carousel" style="margin-top:30px;">
-          <div class="item" style="width:190px"><img src="img/books/1.jpg" alt=""/></div>
-          <div class="item" style="width:190px"><img src="img/books/2.jpg" alt=""/></div>
-          <div class="item" style="width:190px"><img src="img/books/3.jpg" alt=""/></div>
-          <div class="item" style="width:190px"><img src="img/books/4.jpg" alt=""/></div>
-          <div class="item" style="width:190px"><img src="img/books/5.jpg" alt=""/></div>
-          <div class="item" style="width:190px"><img src="img/books/6.jpg" alt=""/></div>
-          <div class="item" style="width:190px"><img src="img/books/7.jpg" alt=""/></div>
-        </div>
-    </div>
-
-  </section>
-
-
-
-
-  <!-- Cabinet Section -->
-  <section id="cabinet" class="container-fluid content-section text-center">
-    <div class="container">
-      <h2 class="text-primary">Le cabinet</h2>
-      <hr class="white">
-      <div class="row" style="margin-top:15px;">
-        <div class="col-md-4">
-          <a href="img/cabinet/1-HD.jpg">
-            <img src="img/cabinet/1.jpg" class="img-responsive" alt="" />
-          </a>
-        </div>
-        <div class="col-md-4">
-          <a href="img/cabinet/2-HD.jpg">
-            <img src="img/cabinet/2.jpg" class="img-responsive" alt="" />
-          </a>
-        </div>
-        <div class="col-md-4">
-          <a href="img/cabinet/3-HD.jpg">
-            <img src="img/cabinet/3.jpg" class="img-responsive" alt="" />
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Therapies Section -->
-  <section id="therapies" class="container content-section text-center">
-    <h2>Les thérapies</h2>
-    <hr>
-    <h3 class="text-left">La psychanalyse peut vous proposer plusieurs situations : </h3>
-    <ul class="text-left">
-      <li>La thérapie analytique, en face à face, pour des difficultés que vous traversez en ce moment. On parle alors de thérapies de « soutien » ou d’ « accompagnement ». </li>
-      <li>La cure analytique, sur le divan, si vous souhaitez aller plus en profondeur et remonter jusqu’à votre petite enfance, à la racine des troubles. C’est la psychanalyse proprement dite.
-    Le divan n’est pas un passage obligé. Il peut vous être proposé lorsque le psychanalyste estimera le moment propice.</li>
-    </ul>
   
-    <h3 class="text-left">Mes séances s’adressent : </h3>
-    <ul class="text-left">
-      <li>Aux adultes de tout âge </li>
-    	<li>Aux adolescents (Ils peuvent être reçus seuls, sans leurs parents) </li>
-    	<li>Aux enfants (Après une première séance avec un parent, les enfants sont reçus seuls, le parent attend dans la salle d’attente)</li>
-    	<li>Aux couples (Ils sont reçus ensemble)</li>
-    </ul>
-
-    <h3 class="text-left">Orientations : </h3>
-    <ul class="text-left">
-     <li>Freudienne (Affronter ses conflits intérieurs)</li> 
-     <li>Jungienne (Se confronter à son inconscient collectif)</li> 
-     <li>Bibliothérapie (Se soigner par les livres)</li> 
-     <li>Psychothérapie mimétique (Identifier le désir mimétique)</li> 
-    </ul>
-  </section>
-
-
-
-  <!-- Contact Section -->
-  <section id="contact">
-    <div id="maps"></div>
-    <div class="container">
-      <div id="contactform">
-        <div class="row" >
-          <div class="col-sm-12 col-md-8" >
-
-
-
-        <div class="col-sm-12"  >
-          <h2 class="text-center">Contact</h2>
-          <hr>
-          <p>
-            Si vous le souhaitez, vous pouvez utiliser ce formulaire de contact ou m’appeler pour prendre rendez-vous.
-          </p>
-        </div>
-        <form id="form">
-          <div class="form-group">
-            <div class="col-sm-6">
-              <label for="nom">* Nom</label>
-              <input type="text" class="form-control" id="nom" name="nom" placeholder="" required>
-            </div>
-            <div class="col-sm-6">
-              <label for="email">* Email</label>
-              <input type="email" class="form-control" id="email" name="email" placeholder="" required>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="col-sm-12">
-              <label for="sujet">Sujet :</label>
-              <input type="text" class="form-control" id="sujet" name="sujet" placeholder="">
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="col-sm-12">
-              <label for="message">* Message :</label>
-              <textarea class="form-control" id="message" name="message" rows="8" required></textarea>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="col-sm-12 text-right">
-              <button type="submit" class="btn btn-default">Envoyer</button>
-            </div>
-          </div>
-
-
-
-        </form>
-        </div>
-        <div class="col-sm-12 col-md-4 infos" style="">
-          <!-- 1 -->
-          <div class="row">
-            <div class="col-md-2">
-              <i class="fa fa-map-marker" aria-hidden="true"></i>
-            </div>
-            <div class="col-md-10">
-              <div class="title"> Le Cabinet</div>
-              <p>15 bis, Route nationale <br>
-              66690 Saint-André<br>
-              (face à La Poste)
-            </p>
-            </div>
-          </div>
-          <!-- /1 -->
-          <!-- 2 -->
-          <div class="row">
-            <div class="col-md-2">
-              <i class="fa fa-phone" aria-hidden="true"></i>
-            </div>
-            <div class="col-md-10">
-              <div class="title">Téléphone</div>
-              <p>07 83 04 60 15</p>
-            </div>
-          </div>
-          <!-- /2 -->
-        </div>
-      </div>
-      </div>
+  <!-- Bandeau Engagement -->
+  <div class="text-white py-2 shadow-sm" style="margin-top: 80px; background-color: var(--zen-bronze-light);">
+    <div class="container text-center">
+      <p class="mb-0 fst-italic">
+        <i class="bi bi-heart-fill me-2"></i>
+        Tous les bénéfices des consultations, des formations et des conférences sont reversés à l'Association de promotion de la psychanalyse : <strong>"Le PSY QUI OSE"</strong>.
+      </p>
     </div>
-
-  </section>
-
-  <!-- Modal Email -->
-  <div class="bs-email">
-
-      <div id="ModalEmail" class="modal fade">
-          <div class="modal-dialog">
-              <div class="modal-content">
-                  <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                      <h4 class="modal-title">Confirmation</h4>
-                  </div>
-                  <div class="modal-body">
-                      <p>Votre message a bien été envoyé. </p>
-                  </div>
-                  <div class="modal-footer">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
-                  </div>
-              </div>
-          </div>
-      </div>
   </div>
 
+  <main>
+    <!-- Welcome Section -->
+    <section id="welcome" class="py-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-5 text-center mb-4 mb-lg-0">
+            <h1 class="display-4 mb-3 text-zen">Bienvenue</h1>
+            <div class="zen-separator"><span></span><span></span><span></span></div>
+            <img src="img/portrait.webp" class="img-fluid rounded shadow-sm" alt="Portrait Alain Badia, psychanalyste" loading="lazy" />
+          </div>
+          <div class="col-lg-7">
+            <h2 class="h3 mb-4 text-zen">Qu’est-ce que la psychanalyse ?</h2>
+            <p>La psychanalyse est une voie d’exploration de l’inconscient et une méthode thérapeutique qui a plus d’un siècle, un siècle qui a vu se confirmer les intuitions géniales de son concepteur, Freud.</p>
+            <p>Cette méthode est fondée sur la parole, la parole de celui qui consulte et peut parler librement comme jamais peut-être il n’a pu le faire avec quiconque, ni sa famille, ni son (sa) conjoint(e), ni ses amis.</p>
+            <p>Parce que le psychanalyste, dans sa neutralité bienveillante, son attitude empathique, écoute votre parole sans porter de jugement. Il vous accompagne, en interprétant cette parole afin que vous puissiez faire émerger un sens nouveau.</p>
+            <p>Je vous accueille dans un cadre et un temps qui vous sont spécialement dédiés. Il s’agit de reconnaître votre souffrance, de lui donner un lieu, un temps, un cadre, afin qu’elle puisse se dire et être entendue. Sans jugement. En toute confidentialité.</p>
+            <div class="alert alert-light border border-2 mt-4 shadow-sm" role="alert" style="border-color: var(--zen-gold-bronze) !important;">
+              <strong>Il n’y a pas de honte à prendre soin de soi, mais il faut du courage pour franchir le pas, lorsque notre éducation ne nous y a pas habitués, lorsque nos proches n’en ressentent pas la nécessité, lorsque nous-mêmes ne nous autorisons pas une vie meilleure. Je vous souhaite ce courage.</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cabinet Section -->
+    <section id="cabinet" class="py-5 bg-zen-lin">
+      <div class="container text-center">
+        <h2 class="text-zen mb-3">Le cabinet</h2>
+        <div class="zen-separator"><span></span><span></span><span></span></div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <a href="#lightbox1" data-bs-toggle="modal" role="button" aria-label="Agrandir la photo du cabinet 1">
+              <img src="img/2big.webp" class="img-fluid rounded shadow-sm img-hover" alt="Vue du cabinet 1" loading="lazy" />
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a href="#lightbox2" data-bs-toggle="modal" role="button" aria-label="Agrandir la photo du cabinet 2">
+              <img src="img/3big.webp" class="img-fluid rounded shadow-sm img-hover" alt="Vue du cabinet 2" loading="lazy" />
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a href="#lightbox3" data-bs-toggle="modal" role="button" aria-label="Agrandir la photo du cabinet 3">
+              <img src="img/4big.webp" class="img-fluid rounded shadow-sm img-hover" alt="Vue du cabinet 3" loading="lazy" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Therapies Section -->
+    <section id="therapies" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-3 text-zen">Les thérapies</h2>
+        <div class="zen-separator"><span></span><span></span><span></span></div>
+        <div class="row g-5">
+          <div class="col-md-6">
+            <h3 class="h5 text-zen">La psychanalyse peut vous proposer plusieurs situations :</h3>
+            <ul class="list-group list-group-flush mt-3">
+              <li class="list-group-item border-0 px-0">La thérapie analytique, en face à face, pour des difficultés que vous traversez en ce moment. On parle alors de thérapies de « soutien » ou d’ « accompagnement ».</li>
+              <li class="list-group-item border-0 px-0">La cure analytique, sur le divan, si vous souhaitez aller plus en profondeur et remonter jusqu’à votre petite enfance, à la racine des troubles. C’est la psychanalyse proprement dite. Le divan n’est pas un passage obligé. Il peut vous être proposé lorsque le psychanalyste estimera le moment propice.</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h3 class="h5 text-zen">Mes séances s’adressent :</h3>
+            <ul class="list-group list-group-flush mt-3 mb-4">
+              <li class="list-group-item border-0 px-0"><i class="bi bi-check-circle text-success me-2"></i>Aux adultes de tout âge</li>
+              <li class="list-group-item border-0 px-0"><i class="bi bi-check-circle text-success me-2"></i>Aux adolescents (Ils peuvent être reçus seuls, sans leurs parents)</li>
+              <li class="list-group-item border-0 px-0"><i class="bi bi-check-circle text-success me-2"></i>Aux enfants (Après une première séance avec un parent, les enfants sont reçus seuls, le parent attend dans la salle d’attente)</li>
+              <li class="list-group-item border-0 px-0"><i class="bi bi-check-circle text-success me-2"></i>Aux couples (Ils sont reçus ensemble)</li>
+            </ul>
+            <h3 class="h5 text-zen">Orientations :</h3>
+            <ul class="list-unstyled mt-3">
+              <li class="mb-2"><strong>Freudienne</strong> : Affronter ses conflits intérieurs</li>
+              <li class="mb-2"><strong>Jungienne</strong> : Se confronter à son inconscient collectif</li>
+              <li class="mb-2"><strong>Bibliothérapie</strong> : Se soigner par les livres</li>
+              <li class="mb-2"><strong>Psychothérapie mimétique</strong> : Identifier le désir mimétique</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+	
+    <!-- Charte du Cadre Section -->
+    <section id="cadre" class="py-5 bg-zen-lin">
+      <div class="container">
+        <h2 class="text-center mb-3 text-zen">Le cadre thérapeutique</h2>
+        <div class="zen-separator"><span></span><span></span><span></span></div>
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="card border-0 shadow-sm p-4 p-md-5">
+              <p class="lead text-muted mb-4 text-center">La psychanalyse repose sur un cadre précis, garant de la sécurité et de la liberté nécessaire à votre cheminement.</p>
+              <div class="row g-4">
+                <div class="col-md-6">
+                  <h4 class="text-zen"><i class="bi bi-shield-lock me-2"></i>Confidentialité absolue</h4>
+                  <p class="small">Tout ce qui est dit durant les séances est couvert par le secret professionnel. Le cabinet est un espace protégé où votre parole est accueillie avec une totale neutralité.</p>
+                </div>
+                <div class="col-md-6">
+                  <h4 class="text-zen"><i class="bi bi-clock me-2"></i>Régularité des séances</h4>
+                  <p class="small">La régularité est un pilier du travail analytique. Elle permet de construire un espace stable où la pensée peut se déployer, au-delà des aléas du quotidien.</p>
+                </div>
+                <div class="col-md-6">
+                  <h4 class="text-zen"><i class="bi bi-heart me-2"></i>Bienveillance sans jugement</h4>
+                  <p class="small">Mon engagement est de vous offrir une écoute empathique, sans jugement de valeur, afin que vous puissiez explorer vos propres vérités en toute sérénité.</p>
+                </div>
+                <div class="col-md-6">
+                  <h4 class="text-zen"><i class="bi bi-journal-check me-2"></i>Un engagement mutuel</h4>
+                  <p class="small">La thérapie est une démarche volontaire. Elle nécessite un engagement mutuel pour permettre l'émergence d'un sens nouveau à votre souffrance ou à vos questionnements.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-3 text-zen">Contact</h2>
+        <div class="zen-separator"><span></span><span></span><span></span></div>
+
+        <div class="row g-5">
+          <div class="col-md-8">
+            <p class="mb-4">Si vous le souhaitez, vous pouvez utiliser ce formulaire de contact ou m’appeler pour prendre rendez-vous.</p>
+            
+            <form id="contactForm" action="contact.php" method="POST" aria-label="Formulaire de contact">
+              
+              <!-- POT DE MIEL ANTI-SPAM (Honeypot) -->
+              <div style="display: none !important;" aria-hidden="true">
+                <label for="verification_address">Ne pas remplir ce champ si vous êtes un humain :</label>
+                <input type="text" name="verification_address" id="verification_address" tabindex="-1" autocomplete="off">
+              </div>
+
+              <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                  <label for="nom" class="form-label">Nom *</label>
+                  <input type="text" class="form-control" id="nom" name="nom" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="email" class="form-label">Email *</label>
+                  <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="sujet" class="form-label">Sujet</label>
+                <input type="text" class="form-control" id="sujet" name="sujet">
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Message *</label>
+                <textarea class="form-control" id="message" name="message" rows="6" required></textarea>
+              </div>
+              <div class="mb-4 text-center">
+                <p class="text-muted mb-0">
+                  <em>En soumettant ce formulaire, vous acceptez que les informations saisies soient traitées exclusivement pour répondre à votre demande de contact (vos données ne sont jamais transmises à des tiers).</em>
+                </p>
+              </div>
+              <div class="text-end">
+                <button type="submit" class="btn btn-gold-bronze px-4 py-2">Envoyer le message</button>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-4">
+            <div class="card bg-white border-0 shadow-sm">
+              <div class="card-body p-4">
+                <!-- Adresse du Cabinet -->
+                <div class="d-flex align-items-start mb-4">
+                  <i class="bi bi-geo-alt fs-3 text-zen me-3"></i>
+                  <div>
+                    <h4 class="h5 mb-1 text-zen">Le Cabinet</h4>
+                    <p class="mb-0 text-muted">15 bis, Route nationale<br>66690 Saint-André<br><small>(face à La Poste)</small></p>
+                  </div>
+                </div>
+                
+                <!-- Téléphone -->
+                <div class="d-flex align-items-start mb-4">
+                  <i class="bi bi-telephone fs-3 text-zen me-3"></i>
+                  <div>
+                    <h4 class="h5 mb-1 text-zen">Téléphone</h4>
+                    <p class="mb-0 text-muted">
+                      <a href="tel:+33783046015" class="text-decoration-none text-muted">07 83 04 60 15</a>
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Carte Google Maps Intégrée -->
+                <div class="map-container mb-4" style="width: 100%; height: 180px; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0;">
+                  <iframe 
+                    src="https://maps.google.com/maps?q=15%20bis,%20Route%20nationale,%2066690%20Saint-Andr%C3%A9&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                    style="width: 100%; height: 100%; border: 0;"
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                  </iframe>
+                </div>
+
+                <!-- Informations Parkings / Stationnement -->
+                <div class="d-flex align-items-start border-top pt-3">
+                  <i class="bi bi-p-circle fs-4 text-zen me-3"></i>
+                  <div>
+                    <h4 class="h6 mb-1 text-zen fw-bold">Stationnement proche</h4>
+                    <p class="mb-0 text-muted small" style="line-height: 1.4;">
+                      • Places disponibles en zone bleue directement face au cabinet (devant La Poste).<br>
+                      • Parkings publics et gratuits accessibles à quelques pas dans le centre-bourg.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Avis Patients -->
+    <section id="avis" class="py-5 bg-zen-lin border-top border-zen">
+      <div class="container">
+        <h2 class="text-center mb-3 text-zen">Ce que disent les patients</h2>
+        <div class="zen-separator"><span></span><span></span><span></span></div>
+        <p class="lead text-muted text-center mx-auto mb-5 fst-italic text-secondary" style="max-width: 850px; font-size: 1.05rem !important;">
+          Tous ces témoignages ne sont sollicités qu'après la fin de la thérapie. Ils garantissent un avis exprimé avec un véritable recul.
+        </p>
+        
+        <div class="row g-4 align-items-stretch">
+          
+          <!-- Colonne Gauche : Google Reviews (Elfsight) -->
+          <div class="col-md-6">
+            <div class="p-4 bg-white rounded shadow-sm h-100">
+              <h3 class="h5 text-center mb-4 text-zen">
+                <i class="bi bi-google text-danger me-2"></i>Avis Google
+              </h3>
+              <script src="https://elfsightcdn.com/platform.js" async></script>
+              <div class="elfsight-app-8b7c48c8-06bf-456c-8559-de40794ac250" data-elfsight-app-lazy></div>
+            </div>
+          </div>
+          
+          <!-- Colonne Droite : Psychologue.net -->
+          <div class="col-md-6">
+            <div class="p-4 bg-white rounded shadow-sm h-100 text-center d-flex flex-column justify-content-between">
+              <div>
+                <h3 class="h5 mb-4 text-zen">
+                  <i class="bi bi-chat-heart text-zen me-2"></i>Avis Psychologue.net
+                </h3>
+                
+                <div id="js_widget" class="ie-common-widget ie-reviews">
+                   <script type="text/javascript" src="https://www.psychologue.net/widget/review_extended?com=277084&h=b86dc063bb98c972b298db879673c1de&v=10"></script>
+                </div>
+              </div>
+              
+              <div class="portal-by mt-3">
+                  <a id="js_portal_by" href="https://www.psychologue.net?utm_source=277084&utm_medium=widget&utm_campaign=widget-review_extended" rel="nofollow" style="text-decoration:none; color:#617d97;">
+                      Par <span style='color:#149c97; text-decoration:underline;'>Psychologue.net</span>
+                  </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
-  <footer>
+  <footer class="bg-dark text-white py-4 text-center">
     <div class="container">
-      <p class="text-center">&copy; Alain Badia Psychanalyste 2017</p>
+      <p class="mb-0">&copy; <span id="currentYear"></span> Alain Badia.</p>
     </div>
   </footer>
 
-  <!-- Google Analytics -->
+  <!-- ===================================================
+       POPUPS (MODALS) DE CONFIRMATION FORMULAIRE
+       =================================================== -->
+  
+  <!-- Popup Succès -->
+  <div class="modal fade" id="contactSuccessModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 shadow-lg rounded-4 bg-zen-lin">
+        <div class="modal-body p-5 text-center">
+          <div class="mb-4">
+            <i class="bi bi-check-circle-fill text-success" style="font-size: 3.5rem;"></i>
+          </div>
+          <h3 class="h4 fw-bold text-dark mb-3">Message envoyé !</h3>
+          <p class="text-muted small mb-4" style="line-height: 1.5;">
+            Votre demande a bien été transmise au secrétariat d'Alain Badia.<br>
+            Une copie de sécurité a été archivée, et le cabinet reviendra vers vous dans les plus brefs délais.
+          </p>
+          <button type="button" class="btn btn-gold-bronze w-100 py-2 rounded-3 fw-bold" data-bs-dismiss="modal">Fermer la fenêtre</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popup Erreur -->
+  <div class="modal fade" id="contactErrorModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 shadow-lg rounded-4 bg-zen-lin">
+        <div class="modal-body p-5 text-center">
+          <div class="mb-4">
+            <i class="bi bi-exclamation-triangle-fill text-danger" style="font-size: 3.5rem;"></i>
+          </div>
+          <h3 class="h4 fw-bold text-dark mb-3">Échec de l'envoi</h3>
+          <p class="text-muted small mb-4" style="line-height: 1.5;">
+            Impossible de valider votre demande. Veuillez vérifier que votre adresse email est correcte et que tous les champs obligatoires (*) sont complétés.
+          </p>
+          <button type="button" class="btn btn-secondary w-100 py-2 rounded-3 fw-bold" data-bs-dismiss="modal">Réessayer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox Modals (Cabinet) -->
+  <div class="modal fade" id="lightbox1" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl"><div class="modal-content lightbox-content"><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button><img src="img/2big.webp" class="img-fluid rounded"></div></div>
+  </div>
+  <div class="modal fade" id="lightbox2" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl"><div class="modal-content lightbox-content"><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button><img src="img/3big.webp" class="img-fluid rounded"></div></div>
+  </div>
+  <div class="modal fade" id="lightbox3" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl"><div class="modal-content lightbox-content"><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button><img src="img/4big.webp" class="img-fluid rounded"></div></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-    ga('create', 'UA-81679917-1', 'auto');
-    ga('send', 'pageview');
+    // Déclenchement automatique des popups selon le paramètre URL (?status=success)
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('status')) {
+      const status = urlParams.get('status');
+      
+      if (status === 'success') {
+        const successModal = new bootstrap.Modal(document.getElementById('contactSuccessModal'));
+        successModal.show();
+      } else if (status === 'error') {
+        const errorModal = new bootstrap.Modal(document.getElementById('contactErrorModal'));
+        errorModal.show();
+      }
+      
+      // Nettoie l'URL proprement (efface le ?status=...) sans recharger, pour éviter les réapparitions intempestives au refresh
+      window.history.replaceState({}, document.title, window.location.pathname + window.location.hash);
+    }
   </script>
-
-  <!-- Google Map API -->
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYTL6FQWLRjamxGKf6LtOFpwwnSQIkz3g&amp&signed_in=true"> </script>
-
-  <!-- jQuery -->
-  <script src="js/jquery.js"></script>
-
-  <!-- Bootstrap Core JavaScript -->
-  <script src="js/bootstrap.min.js"></script>
-
-  <!-- Carousel Core JavaScript -->
-  <script src="js/carousel.min.js"></script>
-
-  <!-- Lightbox Core JavaScript -->
-  <script src="js/lightbox.js"></script>
-
-  <!-- Plugin JavaScript -->
-  <script src="js/jquery.easing.min.js"></script>
-
-  <!-- Custom JavaScript -->
-  <script src="js/main.js" async></script>
 </body>
-
 </html>
