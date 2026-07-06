@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Alain Badia
+N:Badia;Alain;;M.;
+ORG:Alain Badia - Psychanalyste
+TITLE:Psychanalyste
+TEL;TYPE=CELL,VOICE:+33783046015
+ADR;TYPE=WORK,PREF:;;15 bis Route nationale;Saint-André;;66690;France
+NOTE:Cabinet face à La Poste
+URL:https://www.psychologue.net/cabinets/badia-alain
+END:VCARD

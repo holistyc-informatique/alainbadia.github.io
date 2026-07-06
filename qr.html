@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alain Badia | Carte de Visite Digitale</title>
+    
+    <meta name="description" content="Carte de visite digitale de Alain Badia, Psychanalyste à Saint-André. Accédez rapidement aux coordonnées et à l'itinéraire du cabinet.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Icônes Bootstrap pour les boutons d'action -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <style>
+        :root {
+            /* Palette officielle Alain Badia */
+            --zen-bronze-light: #c5a059;
+            --zen-bronze-antique: #b8977e;
+            --zen-lin: #fcfbfa;
+            --zen-gold-bronze: #d4af37;
+
+            /* Intégration dans tes variables d'origine */
+            --primary-dark: #1e293b;
+            --accent-blue: var(--zen-bronze-light);
+            --bg-page: var(--zen-lin);
+            --card-shadow: rgba(0, 0, 0, 0.06);
+            --google-maps-red: #ea4335;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-page);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 350px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px var(--card-shadow);
+            padding: 35px 25px 25px 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.03);
+            box-sizing: border-box;
+        }
+
+        /* Ligne supérieure en Doré-Bronze */
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--zen-gold-bronze);
+        }
+
+        .profile-container {
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .profile-container img {
+            width: 110px;
+            height: 110px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid var(--zen-lin);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            font-size: 1.4rem;
+            color: var(--accent-blue);
+            margin: 5px 0 2px 0;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .title-badge {
+            font-size: 0.85rem;
+            color: var(--zen-bronze-antique);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            font-size: 0.9rem;
+            color: #475569;
+            margin-bottom: 30px;
+            font-weight: 400;
+            line-height: 1.4;
+        }
+
+        .actions {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .btn i {
+            margin-right: 10px;
+            font-size: 1.1rem;
+        }
+
+        /* Bouton principal mis à jour avec ombre Bronze Light */
+        .btn-main {
+            background-color: var(--accent-blue);
+            color: white;
+            box-shadow: 0 4px 12px rgba(197, 160, 89, 0.25);
+        }
+
+        /* Bordures des boutons en Bronze Antique pour supprimer le gris froid */
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-dark);
+            border: 1.5px solid var(--zen-bronze-antique);
+        }
+
+        .btn-maps {
+            background-color: transparent;
+            color: var(--google-maps-red);
+            border: 1.5px solid var(--google-maps-red);
+        }
+
+        .btn:active {
+            transform: scale(0.97);
+        }
+
+        .map-container {
+            width: 100%;
+            height: 130px;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid var(--zen-bronze-antique);
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.01);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        footer {
+            margin-top: auto;
+            font-size: 0.75rem;
+            color: #64748b;
+            padding-top: 25px;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="card">
+        <div class="profile-container">
+            <img src="img/portrait.webp" alt="Alain Badia" width="110" height="110" fetchpriority="high">
+        </div>
+
+        <h1>Alain Badia</h1>
+        <div class="title-badge">Psychanalyste</div>
+        <p class="subtitle">Thérapies pour adultes, adolescents, enfants et couples.</p>
+
+        <div class="actions">
+            <a href="index.html" class="btn btn-main">
+                <i class="bi bi-globe"></i>Consulter le site web
+            </a>
+            <a href="tel:+33783046015" class="btn btn-outline">
+                <i class="bi bi-telephone"></i>Appeler le cabinet
+            </a>
+            <a href="index.html#contact" class="btn btn-outline">
+                <i class="bi bi-envelope"></i>Envoyer un message
+            </a>
+            
+            <!-- Ajout du bouton d'enregistrement vCard demandé -->
+            <a href="alain_badia.vcf" class="btn btn-outline" style="border-color: var(--primary-dark); color: var(--primary-dark);">
+                <i class="bi bi-person-plus"></i>Enregistrer le contact
+            </a>
+            
+            <a href="https://www.google.com/maps/dir/?api=1&destination=15+bis+Route+nationale+66690+Saint-André" target="_blank" rel="noopener" class="btn btn-maps">
+                <i class="bi bi-geo-alt-fill"></i>Calculer l'itinéraire
+            </a>
+        </div>
+
+        <div class="map-container">
+            <iframe 
+                src="https://maps.google.com/maps?q=15%20bis,%20Route%20nationale,%2066690%20Saint-Andr%C3%A9&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+
+        <!-- Encadré engagement associatif discret -->
+        <div class="p-3 bg-white border rounded shadow-sm" style="border: 1px solid var(--zen-bronze-antique) !important; background-color: #ffffff; padding: 15px; border-radius: 14px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-top: 20px; width: 100%; box-sizing: border-box;">
+          <p class="mb-0 small fst-italic text-muted" style="margin: 0; font-size: 0.85rem; color: #475569; font-style: italic;">
+            <i class="bi bi-heart-fill text-danger me-1" style="color: #ea4335;"></i>
+            Bénéfices reversés à l'association <br><strong style="font-weight: 700;">"Le PSY QUI OSE"</strong>.
+          </p>
+        </div>
+
+        <footer>
+            © 2026 Alain Badia | Conception Holistyc
+        </footer>
+    </main>
+
+</body>
+</html>
